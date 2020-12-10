@@ -1,6 +1,8 @@
-import com.company.StackInterface;
+package com.company;
 
+import com.company.StackInterface;
 import java.util.EmptyStackException;
+
 public class NodeBasedStack<T> implements StackInterface<T> {
     // a private Node class
     private class Node {
@@ -71,20 +73,5 @@ public class NodeBasedStack<T> implements StackInterface<T> {
         else data = top.getData(); // get the data stored in the top element
         return data;
     }
-    public static void main (String[] args) {
-        NodeBasedStack<Integer> stack = new NodeBasedStack<Integer>();
-        stack.push(1);
-        stack.push(7);
-        stack.push(9);
 
-        System.out.println("After push, size of the stack: " + stack.size());
-        System.out.println("Top is: " + stack.peek());
-
-        System.out.println("*** Testing pop ***");
-        while (!stack.isEmpty()){
-            System.out.println(stack.pop());
-        }
-
-        System.out.println("After pop, size of the stack: " + stack.size());
-    }
 }
